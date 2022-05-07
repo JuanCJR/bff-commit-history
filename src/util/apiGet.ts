@@ -4,13 +4,14 @@ import { Octokit, App } from 'octokit';
 
 export const apiGet = async (
   url: string,
-  urlParam?: string | number,
+  params?: { [key: string]: string | number },
 ): Promise<{} | any> => {
   try {
     const GIT_API_URL = process.env.GIT_API_URL;
     const axiosRequestConfig: AxiosRequestConfig = {
       method: 'GET',
-      url: `${GIT_API_URL}/${url}/${urlParam ? urlParam : ''}`,
+      url: `${GIT_API_URL}/${url}`,
+      params: params,
       headers: {
         Accept: 'application/vnd.github.v3+json',
       },
