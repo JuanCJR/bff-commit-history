@@ -1,7 +1,7 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 
-import { UsersService } from 'src/services/profiles.service';
+import { UsersService } from 'src/services/users.service';
 import { User } from 'src/entities/user.entity';
 import { NotFoundResponse } from 'src/entities/response.entity';
 
