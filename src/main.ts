@@ -19,8 +19,7 @@ async function bootstrap() {
   app.useGlobalInterceptors(new ClassSerializerInterceptor(app.get(Reflector)));
 
   const config = new DocumentBuilder()
-    .setTitle('API')
-    .setDescription('Github Commit History Api')
+    .setTitle('Github Commit History API')
     .setVersion('1.0')
     .build();
 

@@ -7,11 +7,11 @@ import config from './config';
 
 import { AppController } from './app.controller';
 import { CommitsController } from './controllers/commits.controller';
-import { ProfilesController } from './controllers/profiles.controller';
+import { UsersController } from './controllers/users.controller';
 import { RepositoriesController } from './controllers/repositories.controller';
 
 import { AppService } from './app.service';
-import { ProfilesService } from './services/profiles.service';
+import { UsersService } from './services/profiles.service';
 import { RepositoriesService } from './services/repositories.service';
 import { CommitsService } from './services/commits.service';
 
@@ -23,6 +23,7 @@ import { CommitsService } from './services/commits.service';
       isGlobal: true,
       validationSchema: Joi.object({
         APP_PORT: Joi.number().required(),
+        GIT_API_URL: Joi.string().required(),
       }),
     }),
   ],
@@ -30,8 +31,8 @@ import { CommitsService } from './services/commits.service';
     AppController,
     CommitsController,
     RepositoriesController,
-    ProfilesController,
+    UsersController,
   ],
-  providers: [AppService, ProfilesService, RepositoriesService, CommitsService],
+  providers: [AppService, UsersService, RepositoriesService, CommitsService],
 })
 export class AppModule {}
