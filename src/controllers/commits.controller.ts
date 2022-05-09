@@ -3,7 +3,7 @@ import { ApiResponse, ApiTags } from '@nestjs/swagger';
 
 import { CommitsService } from 'src/services/commits.service';
 import { NotFoundResponse } from 'src/entities/response.entity';
-import { CommitInfo } from 'src/entities/commit.entity';
+import { CommitInfoGrouped } from 'src/entities/commit.entity';
 
 @ApiTags('commits')
 @Controller('commits')
@@ -13,7 +13,7 @@ export class CommitsController {
   @ApiResponse({
     status: 200,
     description: 'Get repositories successfully',
-    type: CommitInfo,
+    type: CommitInfoGrouped,
     isArray: true,
   })
   @ApiResponse({

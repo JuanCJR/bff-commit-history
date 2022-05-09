@@ -23,6 +23,24 @@ export class CommitsService {
         `Commits for the repository ${repoName} by ${username} usernmae not found.`,
       );
     }
-    return commits;
+
+    const groupedCommits = commits
+      .reduce((acumulator, commit) => {
+        const commitDate = new Date(commit.commit.author.date).toDateString();
+        const isAddedIndex = acumulator.findIndex(
+          (item) => item.date === commitDate,
+        );
+
+        if (isAddedIndex < 0) {
+          acumulator.push({ date: commitDate, commits: [commit] });
+          return acumulator;
+        } else {
+          acumulator[isAddedIndex].commits.push(commit);
+          return acumulator;
+        }
+      }, [])
+      .sort((a, b) => a < b);
+
+    return groupedCommits;
   }
 }

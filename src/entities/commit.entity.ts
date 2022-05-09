@@ -139,7 +139,7 @@ class Parent {
   html_url: string;
 }
 
-export class CommitInfo {
+class CommitInfo {
   @ApiProperty()
   sha: string;
   @ApiProperty()
@@ -161,4 +161,14 @@ export class CommitInfo {
     type: Parent,
   })
   parents: Parent[];
+}
+
+export class CommitInfoGrouped {
+  @ApiProperty()
+  date: string;
+  @ApiProperty({
+    isArray: true,
+    type: CommitInfo,
+  })
+  commits: [CommitInfo];
 }
