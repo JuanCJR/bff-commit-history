@@ -1,7 +1,5 @@
 import axios, { AxiosRequestConfig } from 'axios';
 
-import { Octokit, App } from 'octokit';
-
 export const apiGet = async (
   url: string,
   params?: { [key: string]: string | number },
