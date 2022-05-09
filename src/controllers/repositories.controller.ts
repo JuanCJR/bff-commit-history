@@ -16,6 +16,7 @@ export class RepositoriesController {
     status: 200,
     description: 'Get repositories successfully',
     type: Repository,
+    isArray: true,
   })
   @ApiResponse({
     status: 404,

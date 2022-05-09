@@ -6,4 +6,8 @@ export class ApiUrl {
   getRepositories(username: string) {
     return `users/${username}/repos`;
   }
+
+  getCommits(username: string, repoName: string) {
+    return `repos/${username}/${repoName}/commits`;
+  }
 }

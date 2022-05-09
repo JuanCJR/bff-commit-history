@@ -9,7 +9,7 @@ export class RepositoriesService {
 
     const repositories = await apiGet(apiUrl.getRepositories(username), {
       page: page,
-      per_page,
+      per_page: per_page,
     });
 
     if (repositories.status === 404) {
